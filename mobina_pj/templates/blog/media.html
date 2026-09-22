@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="about-banner relative">
+    <div class="overlay overlay-bg"></div>
+
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Media
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section-gap">
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <!-- عکس بزرگ وسط -->
+            <div class="col-lg-10 text-center">
+
+                <div class="profile-image">
+                    <img src="{% static 'img/media/mobina.jpg' %}"
+                         alt="mobina">
+                </div>
+
+            </div>
+
+
+            <!-- متن زیر عکس -->
+            <div class="col-lg-10 text-center mt-5">
+
+                <h1>
+                    {{ name }}
+                </h1>
+
+                <h4>
+                    Senior Blog Writer
+                </h4>
+
+                <p>
+                    {{ bio }}
+                </p>
+
+                <p>
+                    <strong>Email:</strong> {{ email }}
+                </p>
+
+                <p>
+                    <strong>Phone:</strong> {{ phone }}
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<style>
+
+.profile-image {
+    width: 100%;
+    max-width: 900px;
+    height: 650px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* موبایل */
+@media(max-width: 768px){
+
+    .profile-image {
+        height: 450px;
+    }
+
+}
+
+</style>
+
+
+{% endblock %}

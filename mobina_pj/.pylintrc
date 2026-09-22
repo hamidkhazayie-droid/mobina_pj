@@ -1,0 +1,8 @@
+[MESSAGES CONTROL]
+
+disable=
+    missing-module-docstring,
+    missing-function-docstring,
+    trailing-whitespace,
+    missing-final-newline,
+    invalid-name
