@@ -1,3 +1,5 @@
+{% load blog_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,10 +8,8 @@
     <title>Document</title>
   </head>
   <body>
-    {% if post.status == 1 %}
-      <h1>{{ post.title }}</h1>
-      <p>{{ post.content }}</p>
-      <small>{{ post.published_date }}</small>
-    {% endif %}
+    <h1> testing page</h1>
+    <p>test:  </p>
+   {% popularposts %}
   </body>
 </html>
