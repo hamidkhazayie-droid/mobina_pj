@@ -202,29 +202,9 @@
             {% include 'blog/blog-writer.html' %}
 
             <!-- Popular Posts -->
-            <div class="single-sidebar-widget popular-post-widget">
-              <h4 class="popular-title">Popular Posts</h4>
 
-              <div class="popular-post-list">
-                {% for item in posts %}
-                  <div class="single-post-list d-flex flex-row align-items-center">
-                    <div class="thumb">
-                      {% if item.image %}
-                        <img class="img-fluid" src="{{ item.image.url }}" alt="{{ item.title }}" />
-                      {% endif %}
-                    </div>
+            {% popularposts %}
 
-                    <div class="details">
-                      <a href="{% url 'blog:single' item.id %}"><h6>{{ item.title }}</h6></a>
-
-                      <p>{{ item.created_date|date:'d M, Y' }}</p>
-                    </div>
-                  </div>
-                {% empty %}
-                  <p>No posts available.</p>
-                {% endfor %}
-              </div>
-            </div>
             {% include 'blog/blog-ads.html' %}
             <!-- Categories -->
             <div class="single-sidebar-widget post-category-widget">

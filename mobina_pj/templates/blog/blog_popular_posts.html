@@ -1,0 +1,41 @@
+{% load static %}
+
+<div class="single-sidebar-widget popular-post-widget">
+
+    <h4 class="popular-title">Popular Posts</h4>
+
+    <div class="popular-post-list">
+
+        {% for post in posts %}
+
+            <div class="single-post-list d-flex flex-row align-items-center">
+
+                <div class="thumb">
+                    {% if post.image %}
+                        <img class="img-fluid" src="{{ post.image.url }}" alt="{{ post.title }}">
+                    {% else %}
+                        <img class="img-fluid" src="{% static 'img/blog/pp4.jpg' %}" alt="{{ post.title }}">
+                    {% endif %}
+                </div>
+
+                <div class="details">
+                    <a href="{% url 'blog:single' post.id %}">
+                        <h6>{{ post.title }}</h6>
+                    </a>
+
+                    <p>
+                        {{ post.published_date|date:"d M, Y" }}
+                    </p>
+                </div>
+
+            </div>
+
+        {% empty %}
+
+            <p>No posts available.</p>
+
+        {% endfor %}
+
+    </div>
+
+</div>

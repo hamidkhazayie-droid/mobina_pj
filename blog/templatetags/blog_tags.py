@@ -6,7 +6,7 @@ register = template.Library()
 
 @register.simple_tag(name='totalposts')
 def function():
-    posts = Post.objects.filter(status=1).count
+    posts = Post.objects.filter(status=1).count()
     return posts
 
 
@@ -22,7 +22,7 @@ def snippet(value,arg=20):
     return value[:arg] + '...'
 
 
-@register.inclusion_tag('popularposts.html', name='popularposts')
-def papularpost():
-    posts = Post.objects.filter(status=1).order_by('published_date')[:3]
+@register.inclusion_tag('blog/blog_popular_posts.html', name='popularposts')
+def latest_post():
+    posts = Post.objects.filter(status=1).order_by('-published_date')[:1]
     return {'posts':posts}
