@@ -1,6 +1,6 @@
 	{% extends "base.html" %}
 	{% load static %}
-	
+	{% load blog_tags %}
 	
 {% block content %}
 			<!-- start banner Area -->
@@ -154,7 +154,7 @@
 
 
 							{% include 'blog/blog-writer.html' %}
-
+                            {% postcategories %}
 
 								<div class="single-sidebar-widget popular-post-widget">
 									<h4 class="popular-title">Popular Posts</h4>
