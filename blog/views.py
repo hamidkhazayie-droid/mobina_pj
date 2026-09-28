@@ -3,8 +3,10 @@
 from django.shortcuts import render,get_object_or_404
 from .models import Post
 
-def blog_view(request):
+def blog_view(request,cat_name=None):
     posts = Post.objects.filter(status=True)
+    if cat_name:
+        posts = posts.filter(category__name=cat_name) 
     context = {'posts':posts}
     return render(request, 'blog/blog-home.html', context)
 
@@ -16,15 +18,7 @@ def blog_single_view(request,pid):
                'posts':posts}
     return render(request, 'blog/blog-single.html', context)
  
-def media_view(request):
-    context = {
-        'name':'mobina',
-        'email':'mobina@khazayie',
-        'bio':'tuf gaming'
-    }
-    return render (request, 'blog/media.html', context)
-
-
+ 
 def test(request):
     return render(request, 'test.html') 
 
