@@ -1,0 +1,14 @@
+<div class="single-sidebar-widget search-widget">
+    <form class="search-form" action="{% url 'blog:search' %}" method="get">
+        <input
+            placeholder="search posts"
+            name="s"
+            type="text"
+            onfocus="this.placeholder = ''"
+            onblur="this.placeholder = 'search posts'"
+        >
+        <button type="submit">
+            <i class="fa fa-search"></i>
+        </button>
+    </form>
+</div>
