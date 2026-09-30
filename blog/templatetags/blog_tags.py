@@ -40,6 +40,38 @@ def postcategories():
     
     
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
     # categories = {'iot ': 1 ,'programing':2}
     
     # for name,count in categories.items():
